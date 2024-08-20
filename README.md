@@ -1,2 +1,2 @@
 # curry_company
-Repositório do projeto de analise do indicadore da Curry Company
+Repositório do projeto de analise de indicadores da Curry Company
