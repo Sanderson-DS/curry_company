@@ -147,7 +147,7 @@ df1 = df1.loc[linhas_selecionadas,:]
 # Layout no Streamlit 
 # ==============================================================
 
-st.header('Marketplace - Visão Entregadores')
+st.title('Marketplace - Visão Entregadores')
 #st.header(date_slider)
 #st.dataframe(df1)
 
@@ -156,7 +156,7 @@ tab1, tab2, tab3 = st.tabs(['Visão Gerencial','-','-'])
 with tab1:
   
     with st.container():
-        st.title('Overall Metrics')
+        st.markdown('## Indicadores Gerais')
         col1,col2,col3, col4 = st.columns(4)
 
         with col1:
@@ -178,7 +178,7 @@ with tab1:
 
     with st.container():
         st.markdown("""---""")
-        st.title('Avaliações')
+        st.markdown('## Avaliações')
 
         col1, col2 = st.columns(2)
         with col1:
@@ -214,7 +214,7 @@ with tab1:
                 
     with st.container():
         st.markdown("""---""")
-        st.title('Velocidade de Entrega')
+        st.markdown('## Velocidade de Entrega')
 
         col1, col2 = st.columns( 2 )
         with col1:

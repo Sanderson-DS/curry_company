@@ -222,7 +222,7 @@ tab1, tab2, tab3 = st.tabs(['Visão Gerencial', '-', '-'])
 
 with tab1:
     with st.container():
-        st.header('Overal Metrics')
+        st.header('Indicadores Gerais')
         col1, col2, col3= st.columns( 3, gap = 'large') 
         with col1:
             entregadores_unicos = len(df1['Delivery_person_ID'].unique())
@@ -239,7 +239,6 @@ with tab1:
 
 
     with st.container():
-        #st.header('Overal Metrics')
         col4, col5, col6= st.columns( 3, gap = 'large')
 
         with col4:
@@ -256,7 +255,10 @@ with tab1:
 
     with st.container():
         st.markdown("""---""")
+        st.subheader('Tempo médio e o desvio padrão de entrega por cidade e tipo de pedido')
         col1, col2 = st.columns( 2 )
+        
+
 
         with col1:
 
@@ -276,7 +278,7 @@ with tab1:
 
     with st.container():
         st.markdown("""---""")
-        st.header('Distribuição do tempo')
+        st.subheader('Tempo médio e desvio padrão de entrega por cidade e tipo de tráfego.')
         col1, col2 = st.columns( 2 )
 
 

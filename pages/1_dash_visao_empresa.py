@@ -92,7 +92,7 @@ def order_metric( df1 ):
     # Selecao de linhas
     df_aux = df1.loc[:, cols].groupby('Order_Date').count().reset_index()
     # Criar o gráfico
-    fig = px.bar(df_aux, x= 'Order_Date', y='ID', title= 'Pedidos por dia')
+    fig = px.bar(df_aux, x= 'Order_Date', y='ID')
 
     return fig 
 
@@ -202,41 +202,41 @@ df1 = df1.loc[linhas_selecionadas,:]
 # ==============================================================
 # Layout no Streamlit 
 # ==============================================================
-st.header('Marketplace - Visão Cliente')
+st.title('Marketplace - Visão Cliente')
 #st.header(date_slider)
 tab1, tab2, tab3 = st.tabs(['Visão Gerencial', 'Visão Tática', 'Visão Geográfica'])
 
 with tab1:
     with st.container():
-        st.markdown('## Order Metric')
+        st.markdown('## Pedidos por dia')
         fig = order_metric( df1 )
         st.plotly_chart(fig, use_container_width=True)
 
     with st.container():
         col1, col2 = st.columns( 2 )
         with col1:
-            st.header('Traffic Order Share')
+            st.header('Pedidos por tipo de tráfego')
             fig = traffic_order_share( df1 )
             st.plotly_chart(fig, use_container_width=True)
       
         with col2:
-            st.header('Traffic Order City')
+            st.header('Por cidade e tipo de tráfego')
             fig = traffic_order_city( df1 )
             st.plotly_chart(fig, use_container_width=True)
 
 
 with tab2:
     with st.container():
-        st.markdown('# Order by Week')
+        st.markdown('## Quantidade de pedidos por semana')
         fig = order_by_week( df1 )
         st.plotly_chart(fig, use_container_width=True)
 
     with st.container():
-        st.markdown('1# Order Share by Week')
+        st.markdown('## Quantidade de pedidos por entregador por semana')
         fig = order_share_by_week( df1 )
         st.plotly_chart(fig, use_container_width=True)
 
 with tab3:
-    st.markdown('# Country Maps')
+    st.markdown('## A localização central de cada cidade por tipo de tráfego')
     country_maps( df1 )
 
